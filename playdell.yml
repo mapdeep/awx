@@ -1,0 +1,13 @@
+---
+- hosts: PowerEdge
+  connection: local
+  gather_facts: False
+  tasks:
+    - name: debug variables
+      debug:
+        msg: "{{idrac_ip}}"
+    - name: Get hardware inventory
+      dellemc_get_system_inventory:
+        idrac_ip: "{{idrac_ip}}"
+        idrac_user: "{{idrac_user}}"
+        idrac_password: "{{idrac_password}}"
