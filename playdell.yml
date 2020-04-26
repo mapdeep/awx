@@ -3,8 +3,8 @@
   connection: local
   gather_facts: False
   tasks:
-    - name: Retrieve basic inventory of all devices.
-      ome_device_info:
-        hostname: "{{idrac_ip}}"
-        username: "{{idrac_user}}"
-        password: "{{idrac_password}}"
+    - name: Get hardware inventory
+      dellemc_get_system_inventory:
+        idrac_ip: "{{ idrac_ip }}"
+        idrac_user: "{{ idrac_user }}"
+        idrac_password: "{{ idrac_password }}"
